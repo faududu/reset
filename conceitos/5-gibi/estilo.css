@@ -1,0 +1,67 @@
+/* CONCEITO 5 · GIBI (pop art) — história em quadrinhos: fundo de pontinhos (retícula), traço preto grosso, letra de HQ.
+   Acerto = balão "POW!" estourando + linhas de velocidade + respingos de tinta. O mais "cultura pop" e o mais ousado. */
+:root{--bg:#FFE14D;--tx:#111;--tx2:rgba(0,0,0,.65);--card:#fff;--ctx:#111;--ctx2:#555;--linha:rgba(0,0,0,.08);
+  --a:#2F6BFF;--an:#FF3B30;--ok:#0F9D4A;--okbg:#C9F7D9;--no:#FF3B30;--nobg:#FFD9D6;--cta:#111;--cta-tx:#FFE14D;--cta-off:rgba(0,0,0,.12);--cta-off-tx:rgba(0,0,0,.4);
+  --r:18px;--r2:12px;--borda:3px solid #111;--sombra:6px 6px 0 #111;
+  --f:"Lexend",system-ui,sans-serif;--fd:"Bangers","Impact",sans-serif;--fdw:400}
+html,body{background-color:#FFE14D;background-image:radial-gradient(rgba(255,59,48,.22) 22%,transparent 24%);background-size:14px 14px}
+.trilho{height:14px;border:var(--borda);background:#fff}
+.trilho i{background:repeating-linear-gradient(-45deg,#FF3B30 0 8px,#FF6B5B 8px 16px);border-radius:0}
+.secao-nome{color:#111;font:400 18px/1 var(--fd);letter-spacing:.08em}
+.capa,.item,.palavra,.op,.chip,.coluna,.capa-lista li,.btn-audio,.placar div{border:var(--borda)}
+.capa{box-shadow:var(--sombra);position:relative;overflow:hidden}
+.capa::before{content:"";position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 85% 15%,rgba(47,107,255,.10) 0 6deg,transparent 6deg 14deg);pointer-events:none}
+.capa-tag{color:var(--an);font-family:var(--f)}
+.capa-t{font-size:84px;line-height:.88;letter-spacing:.01em;color:#FFE14D;-webkit-text-stroke:3px #111;text-shadow:6px 6px 0 #FF3B30;position:relative}
+.capa-t em{color:#2F6BFF;-webkit-text-stroke:2px #111;text-shadow:3px 3px 0 #111;font-size:.5em}
+.capa-traco{background:#111;height:6px}
+.capa-lista li{background:#fff;font-weight:600}
+.capa-lista span{background:#2F6BFF;color:#fff;border:2px solid #111}
+.coluna{background:#fff;box-shadow:4px 4px 0 #111}
+.col-t .art{font:400 40px/1 var(--fd);border:var(--borda);box-shadow:3px 3px 0 #111;letter-spacing:.04em}
+.palavra{box-shadow:4px 4px 0 #111}
+.grade.mini .palavra{box-shadow:none;border-width:2px}
+.palavra .en{font:400 24px/1 var(--fd);letter-spacing:.04em}
+.grade.mini .palavra .en{font-size:18px;white-space:nowrap}
+.grade.mini .palavra{padding:6px 7px;gap:6px}.grade.mini .palavra .pic{width:26px;height:26px}
+.estrelas{color:#FF3B30;-webkit-text-stroke:2px #111;text-shadow:3px 3px 0 #111}.estrelas span{opacity:1;color:#fff}
+.pic{filter:drop-shadow(3px 3px 0 #111)}
+.item{box-shadow:var(--sombra)}
+.enunciado{font-weight:700}
+.num{background:#111;color:#FFE14D}
+.frase{font-size:60px;letter-spacing:.03em}
+.frase.grande,.vf-frase{font-size:42px}.frase.frase-longa{font-size:36px}
+.pt-in{font-family:var(--f)}
+.lacuna{border-bottom-color:#111}
+.op{box-shadow:4px 4px 0 #111;background:#fff}
+.op-art{font-size:46px;letter-spacing:.04em}
+.op.certo{background:#4ADE80;color:#111;border-color:#111}.op.certo small{color:#111}
+.op.errado{background:#FF6B5B;color:#111;border-color:#111}
+.chip{font:400 30px/1 var(--fd);letter-spacing:.04em;background:#fff;box-shadow:3px 3px 0 #111}
+.chip.corrigido{background:#4ADE80;border-color:#111}
+.btn-audio{background:#fff}.btn-audio.tocando{background:#2F6BFF;color:#fff}
+.pergunta{font:400 30px/1.05 var(--fd);letter-spacing:.03em}
+.revela p{background:#FFF6C2;border:2px solid #111}
+.mic{background:#FF3B30;border:var(--borda);box-shadow:4px 4px 0 #111;color:#fff}
+.cta{border:var(--borda);box-shadow:5px 5px 0 #111;font:400 24px/1 var(--fd);letter-spacing:.06em;border-radius:14px}
+.cta:disabled{box-shadow:none;border-color:rgba(0,0,0,.25)}
+.rodape.folha-ok,.rodape.folha-no{border-top:var(--borda);border-radius:0}
+.folha-txt .fb-t{font-size:32px;letter-spacing:.04em}
+.fim-t{font-size:70px;color:#FF3B30;-webkit-text-stroke:3px #111;text-shadow:5px 5px 0 #111}
+.placar div{background:#fff;box-shadow:4px 4px 0 #111}
+.cta2{border:var(--borda);background:#fff;border-radius:14px}
+.fx-combo{background:#FF3B30;color:#fff;font:400 18px/1 var(--fd);letter-spacing:.05em;border:2px solid #111;border-radius:8px}
+/* acerto = balão de HQ estourando */
+.fx-palavra{font:400 54px/1 var(--fd);letter-spacing:.04em;color:#FFE14D;-webkit-text-stroke:2.5px #111;padding:44px 56px;background:#FF3B30;
+  clip-path:polygon(50% 0,58% 22%,80% 6%,74% 30%,100% 28%,80% 48%,100% 66%,74% 66%,82% 94%,58% 76%,50% 100%,40% 76%,16% 94%,24% 68%,0 70%,18% 50%,0 30%,26% 32%,18% 6%,40% 22%);animation:pow 1s cubic-bezier(.2,1.8,.4,1) forwards}
+.fx-palavra.no{background:#fff;color:#111;-webkit-text-stroke:0;font-size:38px}
+@keyframes pow{0%{opacity:0;transform:translate(-50%,-50%) scale(.2) rotate(-20deg)}22%{opacity:1;transform:translate(-50%,-60%) scale(1.1) rotate(var(--giro))}70%{opacity:1;transform:translate(-50%,-62%) scale(1) rotate(var(--giro))}100%{opacity:0;transform:translate(-50%,-70%) scale(1.3) rotate(var(--giro))}}
+.fx-flash.ok{background:repeating-conic-gradient(from 0deg at 50% 45%,rgba(255,255,255,.9) 0 5deg,transparent 5deg 12deg)}
+.fx-flash.no{background:rgba(255,59,48,.25)}
+.item.fx-acertou{animation:tremeHQ .45s}
+@keyframes tremeHQ{0%,100%{transform:none}25%{transform:rotate(-1.5deg) scale(1.02)}60%{transform:rotate(1deg)}}
+/* troca de tela = virar o quadrinho na diagonal */
+::view-transition-old(palco){animation:.45s cubic-bezier(.7,0,.3,1) both hqSai}
+::view-transition-new(palco){animation:.45s cubic-bezier(.7,0,.3,1) both hqEntra}
+@keyframes hqSai{to{clip-path:polygon(0 0,0 0,0 100%,0 100%);transform:translateX(-8%)}}
+@keyframes hqEntra{from{clip-path:polygon(100% 0,130% 0,130% 100%,70% 100%)}to{clip-path:polygon(-30% 0,100% 0,100% 100%,0 100%)}}

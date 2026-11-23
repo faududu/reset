@@ -1,0 +1,49 @@
+/* CONCEITO 1 · REVISTA POP — a elegância do caderno (visual A) + cor pop + adesivos.
+   Papel creme com grão, título serifado gigante, emoji 3D vira ADESIVO (borda branca, torto), acerto = adesivo carimbado. */
+:root{--bg:#F3EDE3;--tx:#1B1917;--tx2:rgba(27,25,23,.6);--card:#FFFDF8;--ctx:#1B1917;--ctx2:#7A7168;--linha:rgba(27,25,23,.08);
+  --a:#2D5BFF;--an:#D9541F;--ok:#178A45;--okbg:#DDF5E3;--no:#D23B2E;--nobg:#FBE3DE;--cta:#1B1917;--cta-tx:#F3EDE3;
+  --r:22px;--r2:16px;--sombra:0 1px 0 rgba(27,25,23,.06),0 14px 34px -14px rgba(27,25,23,.25);
+  --f:"Inter",system-ui,sans-serif;--fd:"Instrument Serif",Georgia,serif;--fdw:400}
+html,body{background-color:var(--bg);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.trilho{height:3px}.trilho i{background:var(--an)}
+.secao-nome{color:var(--an);font-weight:800}
+.capa{background:transparent;box-shadow:none;padding:18px 4px;position:relative}
+.capa-t{font-size:76px;line-height:.92;letter-spacing:-.03em}
+.capa-t em{font-style:italic;color:var(--a);font-size:.5em}
+.capa-traco{width:74px;height:3px}
+.capa-lista li{background:var(--card);border:1px solid var(--linha);font-size:14.5px}
+.capa-lista span{background:var(--an);color:#fff;border-radius:99px}
+.capa::after{content:"";position:absolute;right:6px;top:4px;width:96px;height:96px;background:url(../../img/star-struck_3d.png) center/contain no-repeat;transform:rotate(12deg);filter:drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(0 10px 10px rgba(0,0,0,.15));animation:adesivo 4s ease-in-out infinite}
+/* adesivos */
+.pic{filter:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 6px 6px rgba(0,0,0,.16))}
+.pic.grande{width:128px;height:128px;transform:rotate(-6deg);animation:adesivo 3.4s ease-in-out infinite}
+@keyframes adesivo{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(4deg) translateY(-5px)}}
+.palavra{border:1px solid var(--linha);box-shadow:none}
+.palavra .en{font:400 24px/1.1 var(--fd)}
+.grade.mini .palavra .en{font:400 21px/1 var(--fd)}
+.col-t .art{border-radius:99px;transform:rotate(-4deg);font:italic 400 34px/1 var(--fd);padding:4px 20px 8px}
+.col-an .col-t .art{transform:rotate(4deg)}
+.coluna{background:transparent;border:1.5px dashed rgba(27,25,23,.18)}
+.item{border:1px solid var(--linha)}
+.enunciado{font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ctx2)}
+.num{background:var(--an);color:#fff}
+.frase{font-size:54px;line-height:1}
+.frase.grande,.vf-frase{font-size:40px}
+.frase.frase-longa{font-size:36px}
+.op{border:1.5px solid rgba(27,25,23,.14)}
+.op-art{font:italic 400 40px/1 var(--fd)}
+.chip{font:400 28px/1 var(--fd);background:#F4EEE4}
+.pergunta{font:400 28px/1.1 var(--fd)}
+.folha-txt .fb-t{font:italic 400 28px/1 var(--fd)}
+.fim-t{font-size:60px}
+.placar b{font-size:40px}
+/* acerto = adesivo carimbado */
+.fx-palavra{font:italic 400 34px/1 var(--fd);color:#1B1917;background:#FFC83D;padding:8px 18px 10px;border-radius:99px;box-shadow:0 0 0 3px #fff,0 10px 20px rgba(0,0,0,.18);animation:carimbo 1.25s var(--mola) forwards}
+.fx-palavra.no{background:#fff;color:var(--no);font-size:26px}
+@keyframes carimbo{0%{opacity:0;transform:translate(-50%,-80%) scale(2.2) rotate(calc(var(--giro) - 14deg))}18%{opacity:1;transform:translate(-50%,-80%) scale(1) rotate(var(--giro))}75%{opacity:1;transform:translate(-50%,-90%) scale(1) rotate(var(--giro))}100%{opacity:0;transform:translate(-50%,-130%) scale(.9) rotate(var(--giro))}}
+.fx-combo{background:var(--an);color:#fff;font:700 12px/1 var(--f);letter-spacing:.04em}
+/* troca de tela = virar a página */
+::view-transition-old(palco){animation:.32s cubic-bezier(.5,0,.75,0) both pagSai}
+::view-transition-new(palco){animation:.5s var(--mola) both pagEntra}
+@keyframes pagSai{to{opacity:0;transform:translateX(-60%) rotate(-5deg)}}
+@keyframes pagEntra{from{opacity:0;transform:translateX(50%) rotate(5deg)}}

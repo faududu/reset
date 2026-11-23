@@ -1,0 +1,76 @@
+/* CONCEITO 3 · WRAPPED — a linguagem das retrospectivas de fim de ano dos apps de música: cor chapada que TROCA a cada tela,
+   letra gigante, formas girando. Acerto = flash de cor + palavra batendo + estrelas + batida de synth. */
+:root{--bg:#3B3BFF;--tx:#D4FF3A;--tx2:rgba(255,255,255,.75);--card:#111;--ctx:#fff;--ctx2:rgba(255,255,255,.6);--linha:rgba(255,255,255,.1);
+  --a:#7DB4FF;--an:#FF5FA8;--ok:#D4FF3A;--okbg:rgba(212,255,58,.16);--no:#FF6B6B;--nobg:rgba(255,107,107,.16);--cta:#111;--cta-tx:#D4FF3A;--cta-off:rgba(0,0,0,.22);--cta-off-tx:rgba(255,255,255,.5);
+  --r:30px;--r2:18px;--sombra:none;--f:"Inter",system-ui,sans-serif;--fd:"Bricolage Grotesque","Inter",sans-serif;--fdw:800}
+html,body{transition:background-color .55s ease}
+html[data-cor="0"],html[data-cor="0"] body{background-color:#3B3BFF;--tx:#D4FF3A}
+html[data-cor="1"],html[data-cor="1"] body{background-color:#FF5FA8;--tx:#111;--tx2:rgba(0,0,0,.6)}
+html[data-cor="2"],html[data-cor="2"] body{background-color:#D4FF3A;--tx:#111;--tx2:rgba(0,0,0,.6)}
+html[data-cor="3"],html[data-cor="3"] body{background-color:#7B61FF;--tx:#fff}
+html[data-cor="4"],html[data-cor="4"] body{background-color:#121212;--tx:#D4FF3A;--card:#232323}
+.fundo{display:block;position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.fundo i{position:absolute;border-radius:50%;mix-blend-mode:overlay;background:#fff;opacity:.35}
+.fundo i:nth-child(1){width:70vmax;height:70vmax;right:-35vmax;top:-30vmax;animation:gira 30s linear infinite;border-radius:42% 58% 63% 37%/41% 44% 56% 59%}
+.fundo i:nth-child(2){width:40vmax;height:40vmax;left:-18vmax;bottom:-12vmax;animation:gira 22s linear infinite reverse;border-radius:0;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.fundo i:nth-child(3){width:18vmax;height:18vmax;right:8vmax;bottom:18vmax;background:transparent;border:3vmax solid #fff;animation:pula 3s ease-in-out infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+@keyframes pula{50%{transform:translateY(-3vmax) scale(1.1)}}
+.fechar,.fx-som{color:var(--tx);opacity:.8}
+.trilho{height:6px;background:rgba(0,0,0,.18)}.trilho i{background:var(--tx)}
+.secao-nome{color:var(--tx);opacity:.85;font-family:var(--fd);font-size:13px;letter-spacing:.06em}
+.capa{background:transparent;padding:10px 2px;color:var(--tx)}
+.capa-tag{color:var(--tx);opacity:.8}
+.capa-t{font-size:92px;line-height:.85;letter-spacing:-.05em;color:var(--tx)}
+.capa-t em{color:#fff;font-size:.42em;letter-spacing:-.02em}
+.capa-traco{background:#fff;height:8px;width:90px}
+.capa-sub{font:700 22px/1.15 var(--fd);color:#fff}
+.capa-lista li{background:rgba(0,0,0,.22);color:#fff;font-family:var(--fd);font-size:17px}
+.capa-lista span{background:var(--tx);color:#111}
+.capa-meta{color:rgba(255,255,255,.8)}
+.lead{font:700 22px/1.15 var(--fd);color:var(--tx)}
+.dica{color:var(--tx);opacity:.85}
+.coluna{background:rgba(0,0,0,.22)}
+.col-t .art{font-size:40px;border-radius:99px;padding:6px 22px}
+.col-a .col-t .art{background:#111;color:#7DB4FF}.col-an .col-t .art{background:#111;color:#FF5FA8}
+.palavra{background:var(--card);color:#fff}
+.palavra .en{font:800 21px/1.1 var(--fd)}
+.palavra .pt{color:rgba(255,255,255,.55)}
+.item{padding:20px 18px 22px}
+.enunciado{color:rgba(255,255,255,.7);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.num{background:var(--ok);color:#111}
+.frase{font-size:64px;line-height:.95;letter-spacing:-.04em}
+.frase.grande,.vf-frase{font-size:42px}.frase.frase-longa{font-size:34px}
+.lacuna{border-color:rgba(255,255,255,.25)}
+.op{background:#1E1E1E;border:2px solid #2C2C2C;color:#fff}
+.op-art{font-size:44px}
+.op.certo{background:var(--ok);border-color:var(--ok);color:#111}.op.certo small{color:#111}
+.op.errado{background:#FF6B6B;border-color:#FF6B6B;color:#111}
+.chip{background:#1E1E1E;color:#fff;font-size:28px}
+.chip.corrigido{background:var(--okbg)}
+.btn-audio{background:#1E1E1E;color:#fff}.btn-audio.tocando{background:var(--ok);color:#111}
+.pergunta{font:800 26px/1.1 var(--fd)}
+.revela p{background:#1E1E1E}.revela b{color:var(--ok)}
+.mic{background:var(--an);color:#111}
+.rodape.folha-ok,.rodape.folha-no{background:#111}
+.folha-txt{color:#fff}.folha-txt .fb-t{font-size:30px;letter-spacing:-.02em}
+.folha-ok .cta{background:var(--ok);color:#111}.folha-no .cta{background:#FF6B6B;color:#111}
+.cta{font-family:var(--fd);font-size:19px;letter-spacing:-.01em}
+.cta2{background:rgba(0,0,0,.25);color:#fff}
+.fim,.fim-pt,.fim-frase,.see,.proxima{color:var(--tx)}
+.fim-t{font-size:72px;letter-spacing:-.05em}
+.placar div{background:#111}.placar b{color:var(--ok);font-size:48px}.placar span{color:rgba(255,255,255,.65)}
+.fx-combo{background:#111;color:var(--ok);font:800 15px/1 var(--fd)}
+/* acerto = palavra gigante batendo na tela */
+.fx-palavra{font:800 56px/1 var(--fd);letter-spacing:-.05em;color:#111;-webkit-text-stroke:0;text-shadow:5px 5px 0 #fff;left:50%!important;top:42%!important;animation:bate 1.05s cubic-bezier(.2,1.6,.4,1) forwards}
+.fx-palavra.no{font-size:48px;color:#fff;text-shadow:4px 4px 0 #111}
+@keyframes bate{0%{opacity:0;transform:translate(-50%,-50%) scale(3) rotate(var(--giro))}18%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(var(--giro))}70%{opacity:1;transform:translate(-50%,-50%) scale(1.05) rotate(var(--giro))}100%{opacity:0;transform:translate(-50%,-50%) scale(1.6) rotate(var(--giro))}}
+.fx-flash.ok{background:#fff}
+.fx-flash.no{background:#FF2D55}
+.item.fx-acertou{animation:soco .5s cubic-bezier(.2,1.6,.4,1)}
+@keyframes soco{0%{transform:scale(1)}30%{transform:scale(1.05) rotate(-1deg)}100%{transform:none}}
+/* troca de tela = círculo de cor que abre de baixo */
+::view-transition-old(palco){animation:.4s ease both wSai}
+::view-transition-new(palco){animation:.6s cubic-bezier(.7,0,.2,1) both wEntra}
+@keyframes wSai{to{opacity:0;transform:scale(.85) translateY(-20px)}}
+@keyframes wEntra{from{clip-path:circle(0% at 50% 110%)}to{clip-path:circle(150% at 50% 110%)}}

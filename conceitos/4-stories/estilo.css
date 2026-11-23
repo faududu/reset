@@ -1,0 +1,61 @@
+/* CONCEITO 4 · STORIES — a aula com cara de Stories do Instagram (o app que o aluno já abre 50x por dia):
+   barrinhas de progresso no topo, cabeçalho com "avatar", tela cheia em degradê, acerto = coraçõezinhos subindo + coração grande. */
+:root{--bg:#2B1055;--tx:#fff;--tx2:rgba(255,255,255,.72);--card:#fff;--ctx:#14092B;--ctx2:#6E6385;--linha:rgba(20,9,43,.07);
+  --a:#6C3BFF;--an:#E8287A;--ok:#12A150;--okbg:#DCFBE6;--no:#E5484D;--nobg:#FFE4E6;--cta:#fff;--cta-tx:#14092B;--cta-off:rgba(255,255,255,.2);--cta-off-tx:rgba(255,255,255,.55);
+  --r:28px;--r2:18px;--sombra:0 24px 60px -20px rgba(10,0,40,.55);--f:"Figtree",system-ui,sans-serif;--fd:var(--f);--fdw:900}
+html,body{background:linear-gradient(160deg,#4F1BD9 0%,#9B1FD1 45%,#E8287A 100%) fixed;transition:background .6s}
+html[data-secao="padrao"] body{background:linear-gradient(160deg,#1B6BFF 0%,#6C3BFF 55%,#C026D3 100%) fixed}
+html[data-secao="vocab"] body{background:linear-gradient(160deg,#0EA5A4 0%,#2563EB 60%,#6C3BFF 100%) fixed}
+html[data-secao="desafio"] body{background:linear-gradient(160deg,#4F1BD9 0%,#9B1FD1 45%,#E8287A 100%) fixed}
+html[data-secao="fala"] body{background:linear-gradient(160deg,#E8287A 0%,#C026D3 50%,#6C3BFF 100%) fixed}
+.topo{padding:12px 14px 4px}
+.fx-segs span{height:3px;background:rgba(255,255,255,.35)}
+.fechar,.fx-som{color:#fff;opacity:.9}
+.fechar{order:9;width:auto}
+.secao-nome{display:flex;align-items:center;gap:9px;padding:8px 16px 2px;color:#fff;text-transform:none;letter-spacing:0;font-size:14px;font-weight:700;min-height:42px}
+.secao-nome::before{content:"";flex:none;width:32px;height:32px;border-radius:50%;background:url(../../img/student_3d.png) center/70% no-repeat,#fff;box-shadow:0 0 0 2px #fff,0 0 0 4px #FF4D8D}
+.secao-nome{white-space:nowrap;overflow:hidden}
+.secao-nome::after{content:"teacher.fabio · agora";opacity:.65;font-weight:500;font-size:13px}
+.palco{padding:10px 14px 20px}
+.capa{background:transparent;color:#fff;box-shadow:none;padding:18px 6px;text-align:center}
+.capa-tag{color:rgba(255,255,255,.8)}
+.capa-t{font-size:64px;letter-spacing:-.04em;text-shadow:0 8px 30px rgba(0,0,0,.25)}
+.capa-t em{color:#FFE066;font-size:.45em}
+.capa-traco{margin:16px auto;background:#fff}
+.capa-lista li{background:rgba(255,255,255,.16);color:#fff;text-align:left;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.capa-lista span{background:#fff;color:#9B1FD1;border-radius:50%}
+.capa-meta{color:rgba(255,255,255,.8)}
+.lead,.dica{color:#fff}
+.coluna{background:rgba(255,255,255,.14)}
+.col-a .col-t .art{background:#fff;color:var(--a)}.col-an .col-t .art{background:#fff;color:var(--an)}
+.palavra{box-shadow:0 10px 24px -12px rgba(0,0,0,.5)}
+.pic.grande{width:150px;height:150px}
+.item{position:relative;padding:20px 16px 22px}
+.enunciado{text-align:center}
+.frase{font-size:46px;letter-spacing:-.03em}
+.op{border:0;background:#F3EEFA}
+.op-art{font-size:34px}
+.op.certo{background:var(--ok);color:#fff}.op.certo small{color:#fff}
+.op.errado{background:var(--no);color:#fff}.op.errado small{color:#fff}
+.chip{background:#F3EEFA}
+.btn-audio{background:#F3EEFA;color:var(--a)}
+.num{background:linear-gradient(90deg,#6C3BFF,#E8287A);color:#fff}
+.mic{background:linear-gradient(135deg,#6C3BFF,#E8287A)}
+.cta{box-shadow:0 10px 30px -10px rgba(0,0,0,.4)}
+.rodape.folha-ok,.rodape.folha-no{background:#fff}
+.folha-ok .cta{background:var(--ok);color:#fff}.folha-no .cta{background:var(--no);color:#fff}
+.cta2{background:rgba(255,255,255,.18);color:#fff}
+.fim,.fim-pt,.fim-frase,.see,.proxima{color:#fff}
+.placar div{background:rgba(255,255,255,.16)}.placar b{color:#fff}.placar span{color:rgba(255,255,255,.75)}
+.fx-combo{background:#fff;color:#E8287A;font-weight:900}
+/* acerto = coração grande no meio (igual curtir com dois toques) */
+.item.fx-acertou::after{content:"❤️";position:absolute;left:50%;top:42%;font-size:120px;line-height:1;pointer-events:none;transform:translate(-50%,-50%);animation:curtiu .9s cubic-bezier(.2,1.6,.4,1) forwards;filter:drop-shadow(0 10px 20px rgba(232,40,122,.45))}
+@keyframes curtiu{0%{opacity:0;transform:translate(-50%,-50%) scale(.2)}25%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}45%{transform:translate(-50%,-50%) scale(.95)}75%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-70%) scale(.8)}}
+.fx-palavra{font-weight:900;font-size:26px;color:#fff;background:linear-gradient(90deg,#6C3BFF,#E8287A);padding:8px 16px;border-radius:99px;box-shadow:0 10px 24px -8px rgba(0,0,0,.4)}
+.fx-palavra.no{background:#fff;color:var(--no)}
+/* troca de tela = cubo, igual passar de um story pro outro */
+::view-transition-group(palco){animation-duration:.55s}
+::view-transition-old(palco){animation:.5s cubic-bezier(.6,0,.3,1) both cuboSai;transform-origin:left center}
+::view-transition-new(palco){animation:.5s cubic-bezier(.6,0,.3,1) both cuboEntra;transform-origin:right center}
+@keyframes cuboSai{to{transform:perspective(900px) translateX(-100%) rotateY(-75deg);opacity:.4}}
+@keyframes cuboEntra{from{transform:perspective(900px) translateX(100%) rotateY(75deg);opacity:.4}}

@@ -13,6 +13,8 @@
   try { if (window.self !== window.top) EMBED = true; } catch (e) { EMBED = true; }
   if (EMBED) document.documentElement.classList.add("embed");
   const KEY = "reset.journal." + A.id;
+  // ganchos pra camada de efeitos (core/fx.js): journal:certo · journal:errado · journal:passo · journal:fim
+  function emit(n, d) { try { window.dispatchEvent(new CustomEvent("journal:" + n, { detail: d || {} })); } catch (e) {} }
 
   // ---------- utilidades ----------
   const $ = (s, r = document) => r.querySelector(s);
@@ -73,6 +75,7 @@
     if (id in S.feitos) return;
     S.feitos[id] = ok; S.total++; if (ok) S.pontos++;
     atualizaTopo();
+    emit(ok ? "certo" : "errado", { id });
   }
 
   // ---------- peças ----------
@@ -153,11 +156,13 @@
           r.append(ex);
           q.append(r);
           play("excellent");
+          emit("certo", { id: "descoberta" });
           makeApi(q).done();
         } else {
           b.classList.add("errado", "treme");
           setTimeout(() => b.classList.remove("treme"), 450);
           b.disabled = true;
+          emit("errado", { id: "descoberta", leve: true });
         }
       };
       ops.append(b);
@@ -261,6 +266,7 @@
         if (q.dataset.done) return;
         if (j === it.errada) { fim(tentativas === 0); return; }
         tentativas++;
+        if (tentativas < 2) emit("errado", { id: "x" + i, leve: true });
         c.classList.add("tava-certa", "treme"); c.disabled = true;
         setTimeout(() => c.classList.remove("treme"), 450);
         if (tentativas >= 2) fim(false);
@@ -301,7 +307,7 @@
           const errou = !acertou && alts.some((t) => errados.some((x) => tem(t, x)));
           tentativas++;
           if (acertou) {
-            msg.className = "mic-msg ok"; msg.innerHTML = `🎉 Perfeito! Ouvi: “${alts[0]}”`; play("excellent"); ok();
+            msg.className = "mic-msg ok"; msg.innerHTML = `🎉 Perfeito! Ouvi: “${alts[0]}”`; play("excellent"); emit("certo", { id: "f" + i, fala: true }); ok();
           } else if (errou) {
             msg.className = "mic-msg no"; msg.innerHTML = `Ouvi “${alts[0]}”. Lembra: <b>${[].concat(it.alvo)[0]}</b>. Tenta de novo!`;
           } else {
@@ -388,7 +394,8 @@
       ${A.proxima ? `<p class="proxima">Próxima: ${A.proxima.titulo} <i>(${A.proxima.pt})</i></p>` : ""}`));
     $("#refazer", box).onclick = () => { location.reload(); };
     play("excellent");
-    if (estrelas >= 2) confete();
+    emit("fim", { estrelas, pontos: p, total: t });
+    if (estrelas >= 2 && !window.__fxFim) confete();
     api.done();
   }, { fim: true });
 
@@ -447,7 +454,12 @@
     app.append(topo, secaoEl, palco, rodape);
     barra = $(".trilho i", topo); pontosEl = $(".pts b", topo);
     let idx = 0;
+    const SECOES = [...new Set(steps.map((x) => x.secao))];
     const mostra = (i) => {
+      if (window.__fxTransicao && palco.childElementCount) { window.__fxTransicao(() => mostra_(i), i); return; }
+      mostra_(i);
+    };
+    const mostra_ = (i) => {
       idx = i;
       const st = steps[i];
       palco.innerHTML = ""; palco.scrollTop = 0;
@@ -463,6 +475,8 @@
       palco.append(box);
       barra.style.width = (i / (steps.length - 1)) * 100 + "%";
       rodape.style.display = st.fim ? "none" : "";
+      const daSecao = steps.filter((x) => x.secao === st.secao);
+      emit("passo", { i, total: steps.length, secao: st.secao, secoes: SECOES, nSecao: SECOES.indexOf(st.secao), dentro: daSecao.indexOf(st), tamSecao: daSecao.length });
     };
     window.__libera = () => { botaoCont.disabled = false; };
     botaoCont.onclick = () => { if (!botaoCont.disabled && idx < steps.length - 1) mostra(idx + 1); };

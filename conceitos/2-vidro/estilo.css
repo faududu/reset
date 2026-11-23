@@ -1,0 +1,47 @@
+/* CONCEITO 2 · VIDRO — vidro fosco por cima de uma aurora colorida que se mexe (linha do iOS 26 "Liquid Glass").
+   Claro, calmo e premium. Acerto = onda de luz + bolinhas de luz subindo + sino. */
+:root{--bg:#EEF0FF;--tx:#16163A;--tx2:rgba(22,22,58,.58);--card:rgba(255,255,255,.52);--ctx:#16163A;--ctx2:rgba(22,22,58,.6);--linha:rgba(22,22,58,.07);
+  --a:#5B5BFF;--an:#FF4F9A;--ok:#0E9F6E;--okbg:rgba(205,250,228,.8);--no:#E5484D;--nobg:rgba(255,226,230,.82);--cta:#16163A;--cta-tx:#fff;--cta-off:rgba(255,255,255,.45);--cta-off-tx:rgba(22,22,58,.35);
+  --r:30px;--r2:20px;--sombra:inset 0 1px 0 rgba(255,255,255,.9),inset 0 0 0 1px rgba(255,255,255,.55),0 20px 50px -20px rgba(60,50,160,.35);
+  --f:"Plus Jakarta Sans",system-ui,sans-serif;--fd:var(--f);--fdw:800}
+.fundo{display:block;position:fixed;inset:-20%;z-index:0;filter:blur(60px) saturate(140%)}
+.fundo i{position:absolute;width:60vmax;height:60vmax;border-radius:50%;opacity:.75;animation:aurora 18s ease-in-out infinite alternate}
+.fundo i:nth-child(1){background:#A99BFF;left:-10%;top:-10%}
+.fundo i:nth-child(2){background:#7FD8FF;right:-15%;top:20%;animation-duration:22s;animation-delay:-6s}
+.fundo i:nth-child(3){background:#FFB3D6;left:10%;bottom:-20%;animation-duration:26s;animation-delay:-12s}
+@keyframes aurora{50%{transform:translate(12vmax,8vmax) scale(1.15)}100%{transform:translate(-6vmax,14vmax) scale(.9)}}
+.item,.capa,.palavra,.op,.coluna,.capa-lista li,.btn-audio,.chip,.rodape.folha-ok,.rodape.folha-no,.placar div,.cta2{-webkit-backdrop-filter:blur(22px) saturate(180%);backdrop-filter:blur(22px) saturate(180%)}
+.trilho{height:10px;background:rgba(255,255,255,.5);box-shadow:inset 0 0 0 1px rgba(255,255,255,.7)}
+.trilho i{background:linear-gradient(90deg,#8B7CFF,#5CC8FF,#7CF2C9);box-shadow:0 0 14px rgba(120,140,255,.7)}
+.capa-tag{color:var(--a)}
+.capa-t{font-size:50px;background:linear-gradient(120deg,#16163A 30%,#5B5BFF 70%,#FF4F9A);-webkit-background-clip:text;background-clip:text;color:transparent}
+.capa-t em{color:var(--an);-webkit-text-fill-color:var(--an)}
+.capa-traco{background:linear-gradient(90deg,#8B7CFF,#FF8FC8)}
+.capa-lista li{background:rgba(255,255,255,.45);box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
+.capa-lista span{background:linear-gradient(135deg,#8B7CFF,#5CC8FF);color:#fff}
+.palavra{background:rgba(255,255,255,.5);box-shadow:var(--sombra)}
+.coluna{background:rgba(255,255,255,.28);box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
+.col-a .col-t .art{background:linear-gradient(135deg,#7B6CFF,#5B5BFF);box-shadow:0 8px 20px -6px rgba(91,91,255,.6)}
+.col-an .col-t .art{background:linear-gradient(135deg,#FF7DB8,#FF4F9A);box-shadow:0 8px 20px -6px rgba(255,79,154,.6)}
+.op{background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.8);box-shadow:0 6px 18px -10px rgba(60,50,160,.4)}
+.op.certo{box-shadow:0 0 0 2px var(--ok),0 0 30px rgba(14,159,110,.45)}
+.chip{background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.9)}
+.btn-audio{background:rgba(255,255,255,.6)}
+.btn-audio.tocando{background:var(--a)}
+.num{background:rgba(91,91,255,.12);color:var(--a)}
+.mic{background:linear-gradient(135deg,#FF7DB8,#8B7CFF);box-shadow:0 12px 30px -10px rgba(139,124,255,.8)}
+.cta{box-shadow:0 14px 30px -14px rgba(22,22,58,.6)}
+.cta:disabled{box-shadow:inset 0 0 0 1px rgba(255,255,255,.7)}
+.rodape.folha-ok,.rodape.folha-no{box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
+.folha-ok .cta{background:linear-gradient(135deg,#19C489,#0E9F6E)}
+.fx-combo{background:rgba(255,255,255,.65);color:var(--a);box-shadow:inset 0 0 0 1px #fff,0 6px 16px -6px rgba(91,91,255,.5)}
+/* acerto = onda de luz */
+.item.fx-acertou{animation:onda .9s ease-out}
+@keyframes onda{0%{box-shadow:var(--sombra),0 0 0 0 rgba(124,242,201,.85)}100%{box-shadow:var(--sombra),0 0 0 28px rgba(124,242,201,0)}}
+.fx-palavra{font-weight:800;font-size:30px;background:linear-gradient(120deg,#5B5BFF,#FF4F9A);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 4px 12px rgba(91,91,255,.35))}
+.fx-palavra.no{background:none;color:var(--no);-webkit-text-fill-color:var(--no)}
+/* troca de tela = desfoque + escala */
+::view-transition-old(palco){animation:.35s ease both vSai}
+::view-transition-new(palco){animation:.55s cubic-bezier(.2,.8,.2,1) both vEntra}
+@keyframes vSai{to{opacity:0;filter:blur(14px);transform:scale(.94)}}
+@keyframes vEntra{from{opacity:0;filter:blur(14px);transform:scale(1.06)}}
