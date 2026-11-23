@@ -1,0 +1,123 @@
+/* VISUAL A · "Caderno" — registro do PRODUTO: editorial, sóbrio. Papel creme, tinta grafite, laranja RESET. */
+:root{--papel:#F2EBE0;--papel2:#FBF7F0;--tinta:#1B1917;--tinta2:#5b544d;--laranja:#D9541F;--ok:#2E7D4F;--okbg:#E4F1E8;--no:#C0392B;--nobg:#F8E3DF;--linha:rgba(27,25,23,.14)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--papel);color:var(--tinta);font:17px/1.55 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+#app{max-width:760px;margin:0 auto;padding:0 22px 60px}
+i{font-style:italic;color:var(--tinta2);font-weight:400}
+button{font:inherit;color:inherit;cursor:pointer}
+.topo{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:14px;padding:12px 0;background:var(--papel);border-bottom:1px solid var(--linha)}
+.voltar{font:700 12px/1 Inter;letter-spacing:.2em;color:var(--tinta);text-decoration:none}
+.embed .voltar{visibility:hidden;width:0}
+.trilho{flex:1;height:3px;background:var(--linha);border-radius:3px;overflow:hidden}.trilho i{display:block;height:100%;width:0;background:var(--laranja);transition:width .4s}
+.pts{font:700 13px Inter;color:var(--laranja)}
+.capa{padding:46px 0 10px}
+.capa-tag,.sec-n{font:700 13px Inter;letter-spacing:.26em;color:var(--laranja);text-transform:uppercase}
+.capa-t{font:400 clamp(46px,9vw,78px)/.99 "Instrument Serif",Georgia,serif;letter-spacing:-.025em;margin:14px 0 0}
+.capa-t em{color:var(--laranja);font-style:italic}
+.capa-traco{width:74px;height:3px;background:var(--laranja);margin:22px 0}
+.capa-sub{font-size:19px;margin:0 0 18px}
+.capa-lista{list-style:none;padding:0;margin:0 0 18px;border-top:1px solid var(--linha)}
+.capa-lista li{padding:11px 0;border-bottom:1px solid var(--linha);font-size:17px}
+.capa-lista span{font:700 12px Inter;letter-spacing:.2em;color:var(--laranja);margin-right:14px}
+.capa-meta{color:var(--tinta2);font-size:15px}
+.capa-feito{background:var(--okbg);color:var(--ok);padding:10px 14px;border-radius:10px;font-weight:600}
+.secao{padding:34px 0 8px;border-top:1px solid var(--linha);margin-top:26px}
+.secao-intro{border:0;margin:0;padding:0}
+.sec-cab{margin-bottom:12px}
+.sec-cab h2{font:400 clamp(34px,6vw,50px)/1 "Instrument Serif",Georgia,serif;letter-spacing:-.02em;margin:8px 0 0}
+.sub{font:700 13px Inter;letter-spacing:.18em;text-transform:uppercase;margin:30px 0 4px;color:var(--tinta2)}
+.lead{font-size:17px;margin:4px 0 14px}
+.dois{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.coluna{background:var(--papel2);border:1px solid var(--linha);border-radius:14px;padding:12px}
+.col-t{text-align:center;margin:2px 0 8px}.col-t .art{font:400 44px/1 "Instrument Serif",serif}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.grade.mini{grid-template-columns:1fr;gap:6px}
+.palavra{position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;background:var(--papel2);border:1px solid var(--linha);border-radius:12px;padding:12px 8px 10px;transition:transform .15s,border-color .15s}
+.grade.mini .palavra{flex-direction:row;gap:10px;padding:7px 10px;background:#fff;justify-content:flex-start;text-align:left}
+.grade.mini .palavra .pic{width:34px;height:34px}
+.grade.mini .palavra .en{font-size:18px}.grade.mini .palavra .pt{font-size:13px;margin-left:auto}
+.palavra:hover{border-color:var(--laranja)}.palavra:active{transform:scale(.97)}
+.palavra.tocando{border-color:var(--laranja);box-shadow:0 0 0 3px rgba(217,84,31,.18)}
+.pic{width:64px;height:64px;object-fit:contain}
+.pic.grande{width:96px;height:96px}
+.palavra .en{font:400 24px/1.1 "Instrument Serif",serif}
+.palavra .pt{font-size:13px;color:var(--tinta2)}
+.palavra .toque{position:absolute;top:6px;right:8px;font-size:11px;opacity:.45}
+.grade.mini .palavra .toque{display:none}
+.art{font-weight:700;color:var(--laranja)}
+.palavra .en .art{font-family:Inter,sans-serif;font-size:.78em}
+.porque{font-size:12px;color:var(--tinta2);text-align:center}
+.grade.mini .exc{flex-wrap:wrap}.grade.mini .exc .porque{width:100%;text-align:left}
+.item{background:var(--papel2);border:1px solid var(--linha);border-radius:16px;padding:18px;margin:12px 0}
+.enunciado{font-weight:600;margin-bottom:10px}
+.num{font:700 12px Inter;letter-spacing:.14em;color:var(--laranja);margin-right:8px}
+.fig{text-align:center}
+.frase{text-align:center;font:400 40px/1.15 "Instrument Serif",serif;margin:8px 0 2px}
+.frase.grande{font-size:36px}
+.lacuna{display:inline-block;min-width:1.6em;border-bottom:2px solid var(--tinta);color:transparent}
+.lacuna.cheia{color:var(--ok);border-color:var(--ok);font-family:Inter;font-weight:700;font-size:.8em}
+.pt{text-align:center;color:var(--tinta2);font-size:15px}
+.opcoes{display:flex;gap:10px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.opcoes.col{flex-direction:column}
+.op{min-width:120px;padding:12px 18px;border:1.5px solid var(--tinta);border-radius:999px;background:transparent;font-weight:600;transition:background .15s}
+.op:hover:not(:disabled){background:var(--tinta);color:var(--papel)}
+.op-art{font:700 22px Inter;min-width:110px}
+.op-vf b{display:block;font-size:18px}.op-vf small{display:block;font-size:12px;opacity:.7;font-weight:400}
+.op.certo{background:var(--ok);border-color:var(--ok);color:#fff}
+.op.errado{background:var(--no);border-color:var(--no);color:#fff}
+.op:disabled{cursor:default}
+.op:disabled:not(.certo):not(.errado){opacity:.4}
+.vf-frase{font-size:32px}.pt-in{font-family:Inter;font-size:18px;color:var(--tinta2)}.igual{color:var(--tinta2)}
+del{color:var(--no);text-decoration-thickness:2px;opacity:.8}
+ins{color:var(--ok);text-decoration:none;font-weight:700;margin-left:4px}
+.selo{font-size:.6em;vertical-align:middle}
+.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;font-size:24px}
+.chip{padding:8px 14px;border:1.5px dashed var(--tinta2);border-radius:10px;background:#fff;font:400 28px/1.1 "Instrument Serif",serif}
+.chip.tava-certa{border-style:solid;border-color:var(--linha);opacity:.55}
+.chip.corrigido{border:2px solid var(--ok);background:var(--okbg)}
+.chip.corrigido ins{font-family:Inter;font-size:.75em}
+.audios{display:flex;gap:8px;justify-content:center;margin-top:12px}
+.btn-audio{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid var(--linha);border-radius:999px;background:#fff;font-size:14px;font-weight:600}
+.btn-audio.tocando{border-color:var(--laranja);color:var(--laranja)}
+.fb{margin-top:14px;padding:12px 14px;border-radius:12px;font-size:15px}
+.fb-ok{background:var(--okbg);color:#1e5a37}.fb-no{background:var(--nobg);color:#8a2a1f}
+.fb-t{margin-right:4px}
+.pergunta{font-size:19px;font-weight:600;text-align:center}
+.revela{margin-top:16px;padding-top:14px;border-top:1px solid var(--linha);text-align:center}
+.revela p{font-size:19px}
+.excecoes{margin-top:10px;text-align:left}
+.ex-t{font-weight:700;margin-bottom:8px}
+.nota{font-size:14px;color:var(--tinta2)}
+.dica{font-size:15px;color:var(--tinta2)}
+.mic-zona{display:flex;justify-content:center;margin-top:14px}
+.mic{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;border:0;background:var(--laranja);color:#fff;font-weight:700;font-size:17px}
+.mic.ouvindo{animation:pulsa 1s infinite}
+.mic-msg{text-align:center;margin-top:10px;font-size:15px;min-height:1em}
+.mic-msg.ok{color:var(--ok);font-weight:600}.mic-msg.no{color:var(--no)}
+.mic-msg .btn-audio{margin:8px auto 0;display:flex;width:max-content}
+.pular{display:block;margin:10px auto 0;background:none;border:0;color:var(--tinta2);font-size:13px;text-decoration:underline}
+.item[data-done] .pular{display:none}
+.cta{display:inline-block;padding:15px 26px;border-radius:999px;border:0;background:var(--tinta);color:var(--papel);font-weight:700;font-size:17px;text-decoration:none;text-align:center}
+.cta2{display:inline-block;padding:14px 22px;border-radius:999px;border:1.5px solid var(--tinta);background:transparent;color:var(--tinta);font-weight:700;text-decoration:none;font-size:16px}
+.grande-cta{width:100%}
+.secao-fim{text-align:center}
+.fim{text-align:center;padding:10px 0}
+.trofeu{width:110px;height:110px}
+.estrelas{font-size:38px;color:var(--laranja);letter-spacing:6px}.estrelas span{color:var(--linha)}
+.fim-t{font:400 56px/1 "Instrument Serif",serif;margin:6px 0 0}
+.fim-pt{color:var(--tinta2);margin:4px 0 16px}
+.placar{display:flex;gap:12px;justify-content:center;margin-bottom:12px}
+.placar div{background:var(--papel2);border:1px solid var(--linha);border-radius:12px;padding:12px 18px}
+.placar b{display:block;font:400 34px/1 "Instrument Serif",serif}.placar span{font-size:12px;color:var(--tinta2)}
+.fim-acoes{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:16px 0}
+.see{font-weight:600}.proxima{font-size:14px;color:var(--tinta2)}
+.treme{animation:treme .4s}
+@keyframes treme{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@keyframes pulsa{0%,100%{box-shadow:0 0 0 0 rgba(217,84,31,.45)}50%{box-shadow:0 0 0 12px rgba(217,84,31,0)}}
+.confete{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:50}
+.confete i{position:absolute;top:-12px;width:9px;height:14px;border-radius:2px;animation:cai linear forwards}
+@keyframes cai{to{top:105%;transform:rotate(720deg) translateX(40px)}}
+.embed #app{padding:0 14px 30px}
+@media (max-width:480px){html,body{font-size:16px}.dois{grid-template-columns:1fr}.frase{font-size:34px}.grade{grid-template-columns:repeat(2,1fr)}}
+.frase.frase-longa{font-size:30px}.op-art.op-longa{font-size:18px}.frase-longa .lacuna{min-width:2.4em}
+.fim-extra{background:var(--papel2);border:1px dashed var(--laranja);border-radius:12px;padding:12px;font-size:15px}
