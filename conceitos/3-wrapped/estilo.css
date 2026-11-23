@@ -13,7 +13,7 @@ html[data-cor="4"],html[data-cor="4"] body{background-color:#121212;--tx:#D4FF3A
 .fundo i{position:absolute;border-radius:50%;mix-blend-mode:overlay;background:#fff;opacity:.35}
 .fundo i:nth-child(1){width:70vmax;height:70vmax;right:-35vmax;top:-30vmax;animation:gira 30s linear infinite;border-radius:42% 58% 63% 37%/41% 44% 56% 59%}
 .fundo i:nth-child(2){width:40vmax;height:40vmax;left:-18vmax;bottom:-12vmax;animation:gira 22s linear infinite reverse;border-radius:0;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
-.fundo i:nth-child(3){width:18vmax;height:18vmax;right:8vmax;bottom:18vmax;background:transparent;border:3vmax solid #fff;animation:pula 3s ease-in-out infinite}
+.fundo i:nth-child(3){width:18vmax;height:18vmax;right:-4vmax;bottom:8vmax;background:transparent;border:3vmax solid #fff;opacity:.2;animation:pula 3s ease-in-out infinite}
 @keyframes gira{to{transform:rotate(360deg)}}
 @keyframes pula{50%{transform:translateY(-3vmax) scale(1.1)}}
 .fechar,.fx-som{color:var(--tx);opacity:.8}

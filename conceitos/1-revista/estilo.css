@@ -13,7 +13,7 @@ html,body{background-color:var(--bg);background-image:url("data:image/svg+xml,%3
 .capa-traco{width:74px;height:3px}
 .capa-lista li{background:var(--card);border:1px solid var(--linha);font-size:14.5px}
 .capa-lista span{background:var(--an);color:#fff;border-radius:99px}
-.capa::after{content:"";position:absolute;right:6px;top:4px;width:96px;height:96px;background:url(../../img/star-struck_3d.png) center/contain no-repeat;transform:rotate(12deg);filter:drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(0 10px 10px rgba(0,0,0,.15));animation:adesivo 4s ease-in-out infinite}
+.capa::after{content:"";position:absolute;right:2px;top:-12px;width:68px;height:68px;background:url(../../img/star-struck_3d.png) center/contain no-repeat;transform:rotate(12deg);filter:drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(0 10px 10px rgba(0,0,0,.15));animation:adesivo 4s ease-in-out infinite}
 /* adesivos */
 .pic{filter:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 6px 6px rgba(0,0,0,.16))}
 .pic.grande{width:128px;height:128px;transform:rotate(-6deg);animation:adesivo 3.4s ease-in-out infinite}
